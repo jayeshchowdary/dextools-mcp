@@ -1,0 +1,21 @@
+ {
+  "mcpServers": {
+    "dextools": {
+      "command": "python",
+      "args": ["dextools_mcp.py"],
+      "type": "stdio",
+      "env": {
+        "DEXTOOLS_API_KEY": {
+          "source": "user",
+          "collection_method": "both",
+          "env_var": "DEXTOOLS_API_KEY"
+        },
+        "DEXTOOLS_PLAN": {
+          "source": "project",
+          "collection_method": "none",
+          "env_var": "DEXTOOLS_PLAN"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "dextools": {
+    "description": "DEXTools MCP server for comprehensive DeFi market analysis, providing real-time data on trending pools, token prices, liquidity metrics, security audits, and blockchain information across 80%+ of major blockchains.",
+    "tools": [
+      {
+        "name": "get_trending_pools",
+        "description": "Get currently trending 'Hot Pairs' on a blockchain - the most popular and active trading pairs",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')"
+        }
+      },
+      {
+        "name": "get_top_gainers",
+        "description": "Get tokens with highest positive price changes - the biggest winners in the market",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')"
+        }
+      },
+      {
+        "name": "get_top_losers",
+        "description": "Get tokens with most significant negative price changes - the biggest losers in the market",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')"
+        }
+      },
+      {
+        "name": "get_pool_details",
+        "description": "Get comprehensive details for a specific liquidity pool including metadata, trading pairs, and statistics",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "pool_address": "string - The contract address of the liquidity pool (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_pool_price",
+        "description": "Get real-time price information for a token pair in a specific liquidity pool",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "pool_address": "string - The contract address of the liquidity pool (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_pool_liquidity",
+        "description": "Get current liquidity data and Total Value Locked (TVL) for a specific pool",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "pool_address": "string - The contract address of the liquidity pool (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_pool_score",
+        "description": "Get DEXTools score for a specific pool - a comprehensive rating based on multiple factors",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "pool_address": "string - The contract address of the liquidity pool (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_token_details",
+        "description": "Get detailed information about a specific token including metadata, social links, and basic stats",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "token_address": "string - The contract address of the token (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_token_security_audit",
+        "description": "Get security audit results for a token's smart contract including potential risks and flags",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "token_address": "string - The contract address of the token (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_token_price",
+        "description": "Get current price information for a specific token across all its trading pairs",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "token_address": "string - The contract address of the token (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_token_score",
+        "description": "Get DEXTools score for a specific token - a comprehensive rating based on multiple factors",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "token_address": "string - The contract address of the token (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_all_pools_for_token",
+        "description": "Find all liquidity pools associated with a token across all DEXs on the blockchain",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "token_address": "string - The contract address of the token (Ethereum: 0x..., Solana: base58)",
+          "from_date": "string (optional) - Start date for historical data (format: YYYY-MM-DDTHH:MM:SS, default: 2024-01-01T00:00:00)",
+          "to_date": "string (optional) - End date for historical data (format: YYYY-MM-DDTHH:MM:SS, default: 2024-12-31T23:59:59)"
+        }
+      },
+      {
+        "name": "get_blockchain_info",
+        "description": "Get blockchain information for a specific chain including network details and statistics",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')"
+        }
+      },
+      {
+        "name": "get_supported_blockchains",
+        "description": "Get list of all supported blockchains by the DEXTools API",
+        "parameters": {}
+      },
+      {
+        "name": "get_pool_liquidity_locks",
+        "description": "Check for locked liquidity in a pool - critical for identifying potential 'rug pulls' and ensuring liquidity security",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "pool_address": "string - The contract address of the liquidity pool (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "get_token_locks",
+        "description": "Check for locked token allocations (team tokens, vesting schedules) - helps assess risk of large token dumps",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "token_address": "string - The contract address of the token (Ethereum: 0x..., Solana: base58)"
+        }
+      },
+      {
+        "name": "find_new_pools_in_range",
+        "description": "Discover new liquidity pools created within a specific time window - perfect for finding new opportunities early",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "from_date": "string (optional) - Start date for search range (format: YYYY-MM-DDTHH:MM:SS, default: 2024-01-01T00:00:00)",
+          "to_date": "string (optional) - End date for search range (format: YYYY-MM-DDTHH:MM:SS, default: 2024-12-31T23:59:59)",
+          "order": "string (optional) - Sort order ('asc' or 'desc', default: 'asc')",
+          "sort": "string (optional) - Sort field ('creationTime', 'liquidity', 'volume', default: 'creationTime')",
+          "page": "integer (optional) - Page number for pagination (default: 1)",
+          "page_size": "integer (optional) - Number of results per page (default: 100)"
+        }
+      },
+      {
+        "name": "find_new_tokens_in_range",
+        "description": "Find new token contracts created within a specific time window - allows analysis before tokens have liquidity",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "from_date": "string (optional) - Start date for search range (format: YYYY-MM-DDTHH:MM:SS, default: 2024-01-01T00:00:00)",
+          "to_date": "string (optional) - End date for search range (format: YYYY-MM-DDTHH:MM:SS, default: 2024-12-31T23:59:59)",
+          "order": "string (optional) - Sort order ('asc' or 'desc', default: 'asc')",
+          "sort": "string (optional) - Sort field ('socialsInfoUpdated', 'creationTime', default: 'socialsInfoUpdated')",
+          "page": "integer (optional) - Page number for pagination (default: 1)",
+          "page_size": "integer (optional) - Number of results per page (default: 100)"
+        }
+      },
+      {
+        "name": "get_dex_list_on_chain",
+        "description": "Get all Decentralized Exchanges (DEXs) indexed by DEXTools on a specific blockchain",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "order": "string (optional) - Sort order ('asc' or 'desc', default: 'asc')",
+          "sort": "string (optional) - Sort field ('name', 'creationTime', default: 'name')",
+          "page": "integer (optional) - Page number for pagination (default: 1)",
+          "page_size": "integer (optional) - Number of results per page (default: 100)"
+        }
+      },
+      {
+        "name": "get_dex_factory_details",
+        "description": "Get low-level information about a DEX's factory contract - the smart contract responsible for creating new trading pairs",
+        "parameters": {
+          "chain_id": "string - The blockchain identifier (e.g., 'ether', 'solana', 'polygon')",
+          "factory_address": "string - The contract address of the DEX factory (Ethereum: 0x..., Solana: base58)"
+        }
+      }
+    ]
+  }
+}
